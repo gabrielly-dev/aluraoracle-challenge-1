@@ -14,12 +14,11 @@
             <a class="cabecalho_navegacao_link" href="decodificador.html">Encriptador</a>
         </nav>
     </header>
-
     <main class="conteudo">
         <section class="conteudo_secao_um">
             <img class="conteudo_secao_imagemredonda" src="/Imagens/imagem_2024-07-12_095949755 1.png" alt="">
             <div class="conteudo_secao_decodificador">
-                <textarea class="conteudo_secao_textareaum" placeholder="O que vai querer criptografar hoje?" style="resize: none"></textarea>
+                <textarea class="conteudo_secao_textareaum" placeholder="Use somente letras minúsculas e sem acento." style="resize: none"></textarea>
                 <div class="conteudo_secao_botoes">
                     <button onclick="BotaoCriptografar()">Criptografar</button>
                     <button onclick="BotaoDescriptografar()">Descriptografar</button>
@@ -27,28 +26,32 @@
             </div>
         </section>
         <section class="conteudo_secao_dois">
-            <p class="conteudo_secao_dica">Use somente letras minúsculas e sem assento.</p>
             <textarea class="conteudo_secao_textareadois" rows="4" cols="50" placeholder="Aguardando para criptografar..." style="resize: none"></textarea>
+            <div class="conteudo_botao_copiar">
+                <button id="botao-copiar" onclick="ClicarBotao()">Copiar</button>
+            </div>
         </section>
     </main>
     <footer class="rodape">
         <section class="rodape_secao">
             <div class="rodape_secao_menu">
-                <a class="rodape_secao_menu_links" href="https://www.linkedin.com/in/gabriellybarbosasilva/" target=”_blank”>
+                <a class="rodape_secao_menu_links" href="https://www.linkedin.com/in/gabriellybarbosasilva/" target="_blank">
                     <img src="/Imagens/Iconlinkedingrande.png" alt="icone do linkedin">
                 </a>
-                <a class="rodape_secao_menu_links" href="https://github.com/gabriellybarbosasilva" target=”_blank”>
+                <a class="rodape_secao_menu_links" href="https://github.com/gabriellybarbosasilva" target="_blank">
                     <img src="/Imagens/Icongithubgrande.png" alt="icone do github">
                 </a>
-                <a class="rodape_secao_menu_links" href="https://www.instagram.com/gabrielly.geb/" target=”_blank”>
+                <a class="rodape_secao_menu_links" href="https://www.instagram.com/gabrielly.geb/" target="_blank">
                     <img src="/Imagens/Iconinstagramgrande.png" alt="icone do instagram">
                 </a>
-                <a class="rodape_secao_menu_links" href="https://www.facebook.com/gabrielly.polysatan/" target=”_blank”>
+                <a class="rodape_secao_menu_links" href="https://www.facebook.com/gabrielly.polysatan/" target="_blank">
                     <img src="/Imagens/Iconfacebookgrande.png" alt="icone do facebook">
                 </a>
             </div>
             <p class="rodape_secao_copy">&copy; Desenvolvido por Gabrielly Barbosa</p>
         </section>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
