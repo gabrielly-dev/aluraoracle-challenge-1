@@ -38,7 +38,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .cabecalho {
-    padding: 2% 4% 0 4%;
+    padding: 1% 4% 0 4%;
 }
 
 .cabecalho_navegacao {
@@ -88,7 +88,7 @@ body::-webkit-scrollbar-thumb {
     font-family: var(--fonte-primaria);
     border-radius: 0.1rem 3.34rem 3.34rem 3.34rem;
     width: 100%;
-    height: 35rem;
+    height: 30rem;
     background-color: var(--cor-terciaria);
     color: var(--cor-primaria);
     font-size: 1.24rem;
@@ -153,12 +153,12 @@ button {
     font-family: var(--fonte-primaria);
     border-radius: 3.34rem 0.1rem 3.34rem 3.34rem;
     width: 100%;
-    height: 35rem;
+    height: 30rem;
     background-color: var(--cor-secundaria);
     color: var(--cor-terciaria);
     font-size: 1.24rem;
     background-image: url(/Imagens/Code\ review-bro.svg);
-    background-size: 70%;
+    background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 1;
