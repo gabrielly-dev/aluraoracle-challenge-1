@@ -1,35 +1,63 @@
-function caesarCipher(text, shift) {
-    return text.split('').map(function(char) {
-        if (char.match(/[a-z]/i)) {
-            var code = char.charCodeAt();
-            var base = (code >= 65 && code <= 90) ? 65 : 97;
-            return String.fromCharCode((code - base + shift + 26) % 26 + base);
-        }
-        return char;
-    }).join('');
-}
+const textArea = document.querySelector(".conteudo_secao_textareaum");
+const mensagem = document.querySelector(".conteudo_secao_textareadois");
 
 function botaoCriptografar() {
-    const textareaUm = document.querySelector('.conteudo_secao_textareaum');
-    const textareaDois = document.querySelector('.conteudo_secao_textareadois');
-    const shift = 3;
-    textareaDois.value = caesarCipher(textareaUm.value, shift);
-    updateBackgroundImage();
+    const textoEncriptado = encriptar(textArea.value);
+    mensagem.value = textoEncriptado;
+    textArea.value = "";
+}
+
+function encriptar(stringEncriptada) {
+    let matrizCodigo = [
+        ["a", "urium"], 
+        ["e", "eiwu"], 
+        ["i", "aoip"], 
+        ["o", "osdif"], 
+        ["u", "usad"], 
+        ["ão", "memahdej"], 
+        [",", "xisj"], 
+        [".", "oei"]
+    ];
+    stringEncriptada = stringEncriptada.toLowerCase();
+    for (let i = 0; i < matrizCodigo.length; i++) {
+        if (stringEncriptada.includes(matrizCodigo[i][0])) {
+            stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1]);
+        }
+    }
+    return stringEncriptada;
 }
 
 function botaoDescriptografar() {
-    const textareaum = document.querySelector('.conteudo_secao_textareaum');
-    const textareadois = document.querySelector('.conteudo_secao_textareadois');
-    const shift = -3;
-    textareadois.value = caesarCipher(textareaum.value, shift);
-    updateBackgroundImage();
+    const textoDesencriptado = desencriptar(mensagem.value);
+    mensagem.value = textoDesencriptado;
+    textArea.value = "";
+}
+
+function desencriptar(stringDesencriptada) {
+    let matrizCodigo = [
+        ["a", "urium"], 
+        ["e", "eiwu"], 
+        ["i", "aoip"], 
+        ["o", "osdif"], 
+        ["u", "usad"], 
+        ["ão", "memahdej"], 
+        [",", "xisj"], 
+        [".", "oei"]
+    ];
+    stringDesencriptada = stringDesencriptada.toLowerCase();
+    for (let i = 0; i < matrizCodigo.length; i++) {
+        if (stringDesencriptada.includes(matrizCodigo[i][1])) {
+            stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1], matrizCodigo[i][0]);
+        }
+    }
+    return stringDesencriptada;
 }
 
 function botaoCopiar() {
     const textareadois = document.querySelector('.conteudo_secao_textareadois');
     textareadois.select();
     navigator.clipboard.writeText(textareadois.value);
-    alert("texto copiado")
+    alert("texto copiado");
 }
 
 function limparSaidaSeEntradaLimpa() {
