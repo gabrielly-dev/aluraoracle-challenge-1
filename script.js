@@ -1,5 +1,15 @@
 const textArea = document.querySelector(".conteudo_secao_textareaum");
 const mensagem = document.querySelector(".conteudo_secao_textareadois");
+const matrizCodigo = [
+    ["ão", "memahdej"],
+    ["a", "urium"], 
+    ["e", "eiwu"], 
+    ["i", "aoip"], 
+    ["o", "osdif"], 
+    ["u", "usad"], 
+    [",", "xisj"], 
+    [".", "oei"]
+];
 
 function botaoCriptografar() {
     const textoEncriptado = encriptar(textArea.value);
@@ -8,16 +18,6 @@ function botaoCriptografar() {
 }
 
 function encriptar(stringEncriptada) {
-    let matrizCodigo = [
-        ["a", "urium"], 
-        ["e", "eiwu"], 
-        ["i", "aoip"], 
-        ["o", "osdif"], 
-        ["u", "usad"], 
-        ["ão", "memahdej"], 
-        [",", "xisj"], 
-        [".", "oei"]
-    ];
     stringEncriptada = stringEncriptada.toLowerCase();
     for (let i = 0; i < matrizCodigo.length; i++) {
         if (stringEncriptada.includes(matrizCodigo[i][0])) {
@@ -34,19 +34,10 @@ function botaoDescriptografar() {
 }
 
 function desencriptar(stringDesencriptada) {
-    let matrizCodigo = [
-        ["a", "urium"], 
-        ["e", "eiwu"], 
-        ["i", "aoip"], 
-        ["o", "osdif"], 
-        ["u", "usad"], 
-        ["ão", "memahdej"], 
-        [",", "xisj"], 
-        [".", "oei"]
-    ];
+    const matrizCodigoInversa = matrizCodigo.reverse();
     stringDesencriptada = stringDesencriptada.toLowerCase();
     for (let i = 0; i < matrizCodigo.length; i++) {
-        if (stringDesencriptada.includes(matrizCodigo[i][1])) {
+        if (stringDesencriptada.includes(matrizCodigoInversa[i][1])) {
             stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1], matrizCodigo[i][0]);
         }
     }
